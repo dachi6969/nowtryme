@@ -1,0 +1,40 @@
+ /* TEXT BUTTON  */
+.text{
+    border: none;
+    background-color: transparent;
+    color: #3F4F44;
+}
+.text:active {
+    transform: scale(1.02);
+    background-color: #3f4f4421;
+}
+.text:hover{
+    background-color: #3f4f4412;
+}
+
+/* OUTLINED BUTTON */
+.outlined{
+    background-color: transparent;
+    color: #3F4F44;
+    border: 1px solid #3F4F44;
+}
+.outlined:active{
+    transform: scale(1.02);
+}
+.outlined:hover{
+    background-color: #3f4f4412;
+}
+
+
+ /* FILLED BUTTON  */
+.filled{
+    background-color: #3F4F44;
+    color: #DCD7C9;
+    border: none;
+}
+.filled:active{
+    transform: scale(1.02);
+}
+.filled:hover{
+    background-color: #3f4f44ea;
+}

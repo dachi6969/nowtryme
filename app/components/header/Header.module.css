@@ -16,7 +16,7 @@
 
 .logo {
     border-radius: 12px;
-    box-shadow: 1px 2px 4px  rgba(0, 0, 0, 0.714);
+    box-shadow: 1px 1px 4px  rgba(0, 0, 0, 0.714);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -31,12 +31,31 @@
 
 .title {
     display: none;
-    color: #d7b89e;
+    color: #cec6af;
     letter-spacing: 1px;
     cursor: default;
     text-shadow: 0 1px 1px rgb(148, 133, 133);
 }
 
+.iconWrapper{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gitIcon{
+    cursor: pointer;
+    color: #DCD7C9;
+    /* padding-top: 4px; */
+}
+
+.menuIcon{
+    cursor: pointer;
+    color: #DCD7C9;
+}
+
+
+    /* medias  */
 @media (min-width: 481px) {
 
     .header{
@@ -63,7 +82,9 @@
 
 @media (min-width: 900px) {
     .menuIcon{
+        display: none;   
+    }
+    .gitIcon{
         display: none;
-        
     }
 }

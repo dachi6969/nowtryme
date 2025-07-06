@@ -3,7 +3,26 @@
     margin-right: 20px;
     font-size: 20px;
     gap: 25px;
-    color: #DCD7C9;
+    color: #cec6af;
+}
+
+.navItem{
+   position: relative; 
+   cursor: pointer;
+}
+
+.navItem::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10;
+    height: 2px;
+    width: 0;
+    background-color: #cec6af;
+    transition: width 0.3s ease;
+}
+.navItem:hover::after{
+    width: 100%;
 }
 
 @media (max-width: 900px) {

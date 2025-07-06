@@ -1,0 +1,69 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeInModalOverlay 0.9s ease forwards;
+  }
+  
+  @keyframes fadeInModalOverlay {
+    from { background: rgba(0, 0, 0, 0); }
+    to { background: #dcd7c941; }
+}
+
+@keyframes slideFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+.box {
+    background-color: #2c3930e0;
+    height: 60vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    animation: slideFromTop 0.5s ease forwards;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+    
+}
+.exit{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #DCD7C9;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #DCD7C9;
+    cursor: pointer;
+}
+.exit:active{
+    transform: scale(1.02);
+}
+.exit:hover{
+  background-color: #2c393070;
+}
+
+
+.description{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 20px;
+}

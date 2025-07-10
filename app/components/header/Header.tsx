@@ -5,14 +5,19 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import { useRouter } from "next/navigation";
 import DeskMenu from "./desktopMenu/DeskMenu";
+import MobileMenu from "./mobileMenu/MobileMenu";
+import { useModal } from "@/app/store/useMenuStore";
+import MenuDrawer from "./menuDrawer/MenuDrawer";
 
 const Header = () => {
     const router = useRouter();
+    const {mobileMenu,openMobileM} = useModal();
     const homeRoute = () => {
         router.push("/");
     }
     return(
         <header className={styles.header}>
+            
             <div className={styles.titleWrapper}>
                 <Image 
                 src="/logo.png" 
@@ -23,9 +28,12 @@ const Header = () => {
                 onClick={homeRoute}
             />
             <span className={styles.title}>
-                Ucha's Furniture
+            Ucha's Furniture
             </span>
             </div>
+            <span className={styles.mobileTitle}>
+                Ucha's Furniture
+            </span>
 
             <div className={styles.iconWrapper}>
                 <a 
@@ -42,10 +50,13 @@ const Header = () => {
                 <AlignJustify 
                 className={styles.menuIcon}
                 aria-label="menu icon"
+                onClick={openMobileM}
                 />
             </div>
-
+            
+            <MenuDrawer />
             <DeskMenu />
+            <MobileMenu />
         </header>
     )
 }

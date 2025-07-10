@@ -1,0 +1,102 @@
+.modal{
+    position: fixed;
+    z-index: 9900;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modalBox{
+    height: 100%;
+    background-color: #cec6af;
+    width: 300px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slide 0.5s ease;
+}
+
+.menuItems{
+    height: 70px;
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    color: black;
+    animation: slideIn 0.7s ease;
+}
+
+
+@keyframes slideIn {
+    from{
+        transform: translateX(-200%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.exit{
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.title {
+    color: #3F4F44;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 30px;
+    top: 10px;
+    left: 12px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    cursor: default;
+    text-shadow: 0 1px 1px #3F4F44;
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 25px;
+    padding-right: 20px;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .modalBox{
+        width: 75%;
+    }
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .menuItems:hover{
+        background-color: #3f4f44ba;
+        color: #cec6af;
+    };
+    .socialIcons:hover{
+        transform: scale(1.15);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+}

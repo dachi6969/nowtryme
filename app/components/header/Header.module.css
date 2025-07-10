@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 0 15px;
     position: fixed;
     z-index: 9200;
     top: 0;
@@ -30,6 +30,11 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.mobileTitle{
+    color: #cec6af;
+    font-size: 25px;
+}
+
 .title {
     display: none;
     color: #cec6af;
@@ -47,7 +52,6 @@
 .gitIcon{
     cursor: pointer;
     color: #DCD7C9;
-    /* padding-top: 4px; */
 }
 
 .menuIcon{
@@ -68,6 +72,10 @@
         font-size: 35px;
         margin: 0 auto;
     };
+
+    .mobileTitle{
+        display: none;
+    }
 
     .logo{
         height: 70px;

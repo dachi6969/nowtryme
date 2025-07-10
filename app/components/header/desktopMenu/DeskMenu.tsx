@@ -1,11 +1,10 @@
 "use client"
 import Link from "next/link";
 import styles from "./DeskMenu.module.css";
-import MenuDrawer from "../menuDrawer/MenuDrawer";
 import { useModal } from "@/app/store/useMenuStore";
 
 const DeskMenu = () => {
-    const {aboutState,openAbout,closeAbout} = useModal();
+    const {aboutState,openAbout} = useModal();
     
     return(
         <nav className={styles.nav}>   
@@ -21,8 +20,6 @@ const DeskMenu = () => {
         <Link href="/" className={styles.navItem}>
             Catalogue
         </Link>
-
-        <MenuDrawer />
 
         </nav>
     )

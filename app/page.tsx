@@ -1,6 +1,7 @@
 "use client"
 
 import Button from "./components/button/Button";
+import Categories from "./components/categories/Categories";
 import FirstContent from "./components/firstContent/FirstContent";
 import DeskMenu from "./components/header/desktopMenu/DeskMenu";
 import SecondContent from "./components/SecondContent/SecondContent";
@@ -13,6 +14,7 @@ export default function Home() {
       <div className={styles.firstContent}>
         <FirstContent />
       </div>
+      <Categories />
       <div className={styles.secondCont}>
         <SecondContent />
       </div>

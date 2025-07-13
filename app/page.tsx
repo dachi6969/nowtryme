@@ -3,6 +3,7 @@
 import Button from "./components/button/Button";
 import FirstContent from "./components/firstContent/FirstContent";
 import DeskMenu from "./components/header/desktopMenu/DeskMenu";
+import SecondContent from "./components/SecondContent/SecondContent";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -12,6 +13,10 @@ export default function Home() {
       <div className={styles.firstContent}>
         <FirstContent />
       </div>
+      <div className={styles.secondCont}>
+        <SecondContent />
+      </div>
+        
     </div>
   );
 }

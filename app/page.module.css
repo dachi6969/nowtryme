@@ -2,13 +2,19 @@
     display: flex;
     flex-direction: column;
     margin-top: 90px;
+    overflow: hidden;
 }
+
+.secondCont{
+    margin-top: 150px;
+}
+
+
 @media (max-width: 480px) {
     .mainWrapper{
         margin-top: 70px;
     }
+    .secondCont{
+        margin-top: 100px;
+    }
 }
-
-/* .firstContent{
-    background-color: red;
-} */

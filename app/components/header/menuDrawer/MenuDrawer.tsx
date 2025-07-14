@@ -17,10 +17,8 @@ const MenuDrawer = () => {
                     About Ucha's Furniture*
                 </h2>
                 <span>
-                Welcome to Ucha's Furniture — where craftsmanship meets comfort.
-                At Ucha's, we believe your home deserves furniture that's both stylish
-                and built to last. Every piece in our collection is carefully selected or
-                handcrafted to bring warmth, elegance, and functionality into your living spaces.
+                    Welcome to Ucha's Furniture — where craftsmanship meets comfort.
+                    At Ucha's, we believe your home deserves more than just furniture — it deserves pieces that reflect your lifestyle, values, and sense of beauty. That's why every item in our collection is thoughtfully chosen or skillfully handcrafted with care, combining timeless style with lasting quality. From cozy corners to statement pieces, we aim to bring warmth, elegance, and functionality into your everyday spaces — so your home not only looks good, but feels like you.
                 </span>
             </div>
                 <button className={styles.exit} onClick={closeAbout}>

@@ -28,7 +28,7 @@ const Header = () => {
                 onClick={homeRoute}
             />
             <span className={styles.title}>
-            Ucha's Furniture
+                Ucha's Furniture
             </span>
             </div>
             <span className={styles.mobileTitle}>

@@ -8,18 +8,18 @@ const DeskMenu = () => {
     
     return(
         <nav className={styles.nav}>   
-        <Link href="/" className={styles.navItem}>
-            Home
-        </Link>
-        <span className={styles.navItem} onClick={openAbout}>
-            About
-        </span>
-        <Link href="/" className={styles.navItem}>
-            Contact
-        </Link>
-        <Link href="/" className={styles.navItem}>
-            Catalogue
-        </Link>
+            <Link href="/" className={styles.navItem}>
+                Home
+            </Link>
+            <span className={styles.navItem} onClick={openAbout}>
+                About
+            </span>
+            <Link href="/" className={styles.navItem}>
+                Contact
+            </Link>
+            <Link href="/" className={styles.navItem}>
+                Catalogue
+            </Link>
 
         </nav>
     )

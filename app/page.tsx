@@ -1,5 +1,6 @@
 "use client"
 
+import Advert from "./components/advertisement/Advert";
 import Button from "./components/button/Button";
 import Categories from "./components/categories/Categories";
 import FirstContent from "./components/firstContent/FirstContent";
@@ -18,7 +19,7 @@ export default function Home() {
       <div className={styles.secondCont}>
         <SecondContent />
       </div>
-        
+        <Advert />
     </div>
   );
 }

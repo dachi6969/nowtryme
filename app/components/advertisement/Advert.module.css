@@ -1,0 +1,62 @@
+.advertImg{
+    margin-top: 15%;
+    width: 100%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    overflow: hidden;
+    align-items: center;
+}
+
+.img{
+    width: 50%;
+    height: 400px;
+    object-fit: fit;
+}
+
+.adverTxt{
+    font-size: 27px;
+    padding: 10px;
+    font-weight: 300;
+}
+
+.titles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.titles h1{
+    font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .advertImg{
+            margin-top: 20%;
+            flex-direction: column;
+            padding-left: 20px;
+            padding-right: 20px;
+    }
+    .img{
+        height: 270px;
+        width: 100%;
+    }
+    .adverTxt{
+        font-size: 20px;
+    }
+}
+@media (min-width: 600px) and (max-width: 1040px) {
+    .advertImg{
+            flex-direction: column;
+            margin-top: 20%;
+    }
+    .img{
+        height: 500px;
+        width: 100%;
+    }
+}

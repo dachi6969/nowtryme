@@ -8,15 +8,18 @@ import DeskMenu from "./desktopMenu/DeskMenu";
 import MobileMenu from "./mobileMenu/MobileMenu";
 import { useModal } from "@/app/store/useMenuStore";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
+import { useColored } from "@/app/store/useColores";
 
 const Header = () => {
     const router = useRouter();
-    const {mobileMenu,openMobileM} = useModal();
+    const {openMobileM} = useModal();
+    const {scrolled} = useColored();
     const homeRoute = () => {
         router.push("/");
     }
+    const styling: any = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
     return(
-        <header className={styles.header}>
+        <header className={styling}>
             
             <div className={styles.titleWrapper}>
                 <Image 

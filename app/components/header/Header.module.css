@@ -1,5 +1,5 @@
 .header {
-    background-color: #3F4F44;
+    background-color: transparent;
     height: 70;
     overflow: hidden;
     display: flex;
@@ -11,9 +11,14 @@
     top: 0;
     right: 0;
     left: 0;
-    box-shadow: 0.5px 0.5px 4px black;
+    transition: background-color 0.7s ease, box-shadow 0.7s ease;
 }
 
+
+.headerClr{
+    background-color: #3F4F44;
+    box-shadow: 0.5px 0.5px 4px black;
+}
 
 .logo {
     border-radius: 12px;
@@ -86,6 +91,10 @@
 @media (hover:hover) and (pointer: fine) {
     .logo:hover {
         transform: translateY(-3px);
+    }
+    .header:hover{
+        background-color: #3F4F44;
+        box-shadow: 0.5px 0.5px 4px black;
     }
 }
 

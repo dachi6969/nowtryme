@@ -1,7 +1,7 @@
 .mainWrapper{
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
+    /* margin-top: 90px; */
     overflow: hidden;
 }
 
@@ -11,9 +11,9 @@
 
 
 @media (max-width: 480px) {
-    .mainWrapper{
+    /* .mainWrapper{
         margin-top: 70px;
-    }
+    } */
     .secondCont{
         margin-top: 100px;
     }

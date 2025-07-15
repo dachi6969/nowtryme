@@ -16,6 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+          {/* pre loading not vissible images */}
+          <>
+            <img src="/desktop1.jpg" style={{ display: "none" }} alt=""/>
+            <img src="/desktop2.jpg" style={{ display: "none" }} alt=""/>
+            <img src="/desktop3.jpg" style={{ display: "none" }} alt=""/>
+            <img src="/mobile1.jpg" style={{ display: "none" }} alt=""/>
+            <img src="/mobile2.jpg" style={{ display: "none" }} alt=""/>
+            <img src="/mobile3.jpg" style={{ display: "none" }} alt=""/>
+          </>
         <Header />
         {children}
       </body>

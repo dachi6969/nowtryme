@@ -1,52 +1,12 @@
 .imaged{
-    height: 700px;
+    height: 100vh;
     width: 100%;
-    /* background-image: url("/first.jpg"); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     animation: imgEffect 0.8s ease-out;
     gap: 20px;
-}
-
-.second{
-    height: 700px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    animation: secondEffect 0.8s ease-out;
-    gap: 20px;
-}
-.third{
-    height: 700px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    animation: thirdEffect 0.8s ease-out;
-    gap: 20px;
-}
-
-.switcher{
-    border: 2px solid #2C3930;
-    background-color: transparent;
-    padding: 4px 17px;
-    font-size: 40px;
-    color: #2C3930;
-    border-radius: 50%;
-    transition: transform 0.4s ease;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    filter: brightness(80%);
 }
 
 .title{
@@ -57,11 +17,35 @@
     left: 10;
 }
 
-@media (hover:hover) and (pointer: fine) {
-    .switcher:hover{
-        transform: translateY(-5%);
-        background-color: #2c39303c
-    }
+.arrow{
+    color: white;
+    width: 70px;
+    cursor: pointer;
+    transform: scaleY(0.8);
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.numberic{
+    color: white;
+    font-size: 20px;
+}
+
+.switcher{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+
+.scrollArrow{
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    height: 70px;
+    bottom: 14%;
+    right: 7%;
 }
 
 
@@ -69,7 +53,7 @@
 @keyframes secondEffect {
     from{
         opacity: 0.6;
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
     to{
         opacity: 1;
@@ -79,7 +63,7 @@
 @keyframes thirdEffect {
     from{
         opacity: 0.6;
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
     to{
         opacity: 1;
@@ -89,7 +73,7 @@
 @keyframes imgEffect {
     from{
         opacity: 0.6;
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
     to{
         opacity: 1;
@@ -99,34 +83,12 @@
 
 @media (min-width: 480px) and (max-width: 900px) {
     .imaged{
-        height: 400px;
-    }
-    .second{
-        height: 400px;
-    }
-    .third{
-        height: 400px;
-    }
-    .switcher{
-        border: 2px solid #2C3930;
-        font-size: 20px;
-        padding: 4px 12px;
+        height: 100vh;
     }
 }
 
 @media (max-width: 480px) {
     .imaged{
-        height: 250px;
-    }
-    .second{
-        height: 250px;
-    }
-    .third{
-        height: 250px;
-    }
-    .switcher{
-        border: 1px solid #2C3930;
-        font-size: 18px;
-        padding: 2px 10px;
+        height: 90vh;
     }
 }

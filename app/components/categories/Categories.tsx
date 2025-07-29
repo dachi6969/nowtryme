@@ -1,6 +1,31 @@
 
 import { motion } from "framer-motion";
 import styles from "./Categories.module.css";
+import Image from "next/image";
+
+const items = [
+    {
+        img: "/teste.png",
+        alt: "armchair photo",
+        title: "Armchair"
+    },
+    {
+        img: "/testerrr.png",
+        alt: "Night table photo",
+        title: "Night table"
+    },
+    {
+        img: "/testerr.png",
+        alt: "Lighting photo",
+        title: "Lighting"
+    },
+    {
+        img: "/testerrrr.png",
+        alt: "Bookshelf photo",
+        title: "Bookshelf"
+    },
+
+]
 
 const Categories = () => {
     return(
@@ -17,34 +42,16 @@ const Categories = () => {
             </div>
 
             <div className={styles.categories}>
-                <div className={styles.itemWrapper}>
-                    <img src={"/teste.png"} alt="armchair photo" className={styles.items}/>
-                    <span>
-                        Armchair
-                    </span>
-                </div>
+                {items.map((item,index) => (
 
-                <div className={styles.itemWrapper}>
-                    <img src={"/testerrr.png"} alt="night table photo" className={styles.items}/>
-                    <span>
-                        Night table
-                    </span>
-                </div>
-
-                <div className={styles.itemWrapper}>
-                    <img src={"/testerr.png"} alt="lighting photo" className={styles.items}/>
-                    <span>
-                        Lighting
-                    </span>
-                </div>
-
-                <div className={styles.itemWrapper}>
-                    <img src={"/testerrrr.png"} alt="bookshelf photo" className={styles.items}/>
-                    <span>
-                        Bookshelf
-                    </span>
-                </div>
-
+                        <div className={styles.itemWrapper} key={index}>
+                            <img src={item.img} alt={item.alt} className={styles.items}/>
+                            <span>
+                                {item.title}
+                            </span>
+                        </div>
+                    ))
+                }
             </div>
         </motion.div>
     )

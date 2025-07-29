@@ -5,7 +5,6 @@ import { useModal } from "@/app/store/useMenuStore";
 
 const DeskMenu = () => {
     const {aboutState,openAbout} = useModal();
-    
     return(
         <nav className={styles.nav}>   
             <Link href="/" className={styles.navItem}>

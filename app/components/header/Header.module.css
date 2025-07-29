@@ -16,8 +16,8 @@
 
 
 .headerClr{
-    background-color: #3F4F44;
-    box-shadow: 0.5px 0.5px 4px black;
+    background-color: #4c6153;
+    box-shadow: 0.5px 0.2px 2px black;
 }
 
 .logo {
@@ -36,16 +36,17 @@
 }
 
 .mobileTitle{
-    color: #cec6af;
+    color: white;
     font-size: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: -1;
 }
 
 .title {
     display: none;
-    color: #cec6af;
+    color: white;
     letter-spacing: 1px;
     cursor: default;
-    text-shadow: 0 1px 1px rgb(148, 133, 133);
 }
 
 .iconWrapper{
@@ -56,12 +57,12 @@
 
 .gitIcon{
     cursor: pointer;
-    color: #DCD7C9;
+    color: white;
 }
 
 .menuIcon{
     cursor: pointer;
-    color: #DCD7C9;
+    color: white;
 }
 
 

@@ -1,9 +1,16 @@
 
+import { motion } from "framer-motion";
 import styles from "./Categories.module.css";
 
 const Categories = () => {
     return(
-        <div className={styles.wrapper}>
+        <motion.div className={styles.wrapper}
+        initial={{ x: "-100%" }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        
+        >
             <div className={styles.title}>
                 <h1>Categories </h1>
                 <h4>Check everything we offering to you !</h4>
@@ -39,7 +46,7 @@ const Categories = () => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

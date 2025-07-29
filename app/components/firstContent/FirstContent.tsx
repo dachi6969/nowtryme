@@ -2,8 +2,9 @@
 
 import { useColored } from "@/app/store/useColores";
 import styles from "./FirstContent.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 const images = [
     {
@@ -31,15 +32,16 @@ const images = [
 const FirstContent = () => {
     const {setScrolledTrue,setScrolledFalse} = useColored();
     const [currentImg,setCurrentImg] = useState(1);
-    const [initialImg, setInitialImg] = useState("/");
+    const [initialImg, setInitialImg] = useState<string | null>(null);
     const [arrowHide,setArrowHide] = useState<boolean>(false);
+    const {ref,inView,entry} = useInView({threshold: 0.3});
 
     const leftArrow = () => {
         if (currentImg === 1) return
         setCurrentImg(prev => prev - 1)
     }
     const rightArrow = () => {
-        if (currentImg === images.length) return
+        if (currentImg === images.length) return setCurrentImg(1)
         setCurrentImg(prev => prev + 1)
     }
     const scroller = () => {
@@ -66,24 +68,34 @@ const FirstContent = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
-
       useEffect(() => {
+        if (!inView) return
         const isDesktop = window.innerWidth > 480;
         setInitialImg(images[currentImg - 1][isDesktop ? "desktop" : "mobile"]);
-      
+
         const timer = setTimeout(() => {
-          setCurrentImg((prev) => (prev === images.length ? 1 : prev + 1));
-        }, 10000);
+            setCurrentImg((prev) => (prev === images.length ? 1 : prev + 1));         
+        },5000)
+        
+        return () => {
+            clearTimeout(timer);
+        }
+      }, [currentImg,inView]);
       
-        return () => clearTimeout(timer); 
-      }, [currentImg]);
-      
-    
 
     return(
         <div className={styles.imaged} 
+        ref={ref}
+        
         >
-            <Image src={initialImg} alt="Furniture content" fill style={{objectFit: "cover"}} loading="eager"/>
+        {initialImg && (
+            <Image 
+            src={initialImg}
+            alt="Furniture content" 
+            fill 
+            style={{objectFit: "cover"}}       
+            />
+        )}
 
             {!arrowHide && <div className={styles.switcher}>
                 <svg

@@ -16,7 +16,7 @@ const MenuDrawer = () => {
 
     return(
         <div className={styles.modal} onClick={closeAbout}>
-            <div className={styles.box} onClick={(e:any) => e.stopPropagation()}>
+            <div className={styles.box} onClick={(e:React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
 
             <motion.div className={styles.description}
             variants={animAbout}

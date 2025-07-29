@@ -2,7 +2,7 @@
 
 import { useColored } from "@/app/store/useColores";
 import styles from "./FirstContent.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 

@@ -26,7 +26,7 @@ const MobileMenu = () => {
     }
     return(
         <div className={styles.modal} onClick={closeMobileM}>
-            <div className={styles.modalBox} onClick={(e:any) => e.stopPropagation()}>
+            <div className={styles.modalBox} onClick={(e:React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
             <span className={styles.title}>
                 Ucha's Furniture
             </span>

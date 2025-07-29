@@ -17,7 +17,7 @@ const Header = () => {
     const homeRoute = () => {
         router.push("/");
     }
-    const styling: any = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
+    const styling: string = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
     return(
         <header className={styling}>
             

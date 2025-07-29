@@ -34,7 +34,7 @@ const FirstContent = () => {
     const [currentImg,setCurrentImg] = useState(1);
     const [initialImg, setInitialImg] = useState<string | null>(null);
     const [arrowHide,setArrowHide] = useState<boolean>(false);
-    const {ref,inView,entry} = useInView({threshold: 0.3});
+    const {ref,inView} = useInView({threshold: 0.3});
 
     const leftArrow = () => {
         if (currentImg === 1) return

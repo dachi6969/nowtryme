@@ -11,7 +11,7 @@ const SecondCards = () => {
                 <div className={styles.imgdiv}></div>
                 <div className={styles.textdiv}>
                     <h1>
-                        Welcome to Ucha&apos;s Furniture!
+                        Welcome to Ucha's Furniture!
                     </h1>
                     <h4>
                     We're so glad you stopped by. At Ucha's Furniture, we believe that your space should feel like you — warm, comfortable, and full of personality.

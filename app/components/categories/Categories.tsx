@@ -1,7 +1,6 @@
 
 import { motion } from "framer-motion";
 import styles from "./Categories.module.css";
-import Image from "next/image";
 
 const items = [
     {

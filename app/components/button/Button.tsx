@@ -10,11 +10,6 @@ type Button = {
     style?: CSSProperties;
 }
 
-const variants = {
-    text: 'text',
-    outlined: 'outlined',
-    filled: 'filled',
-}
 const sizes = {
     small: "10px 20px",
     medium: "12px 28px",

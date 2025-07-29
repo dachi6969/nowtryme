@@ -2,13 +2,11 @@
 
 import { ArrowUp } from "lucide-react";
 import Advert from "./components/advertisement/Advert";
-import Button from "./components/button/Button";
 import Categories from "./components/categories/Categories";
 import FirstContent from "./components/firstContent/FirstContent";
 import SecondContent from "./components/SecondContent/SecondContent";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const [arrowHide,setArrowHide] = useState<boolean>(false);

@@ -2,11 +2,14 @@
 import Link from "next/link";
 import styles from "./DeskMenu.module.css";
 import { useModal } from "@/app/store/useMenuStore";
+import { useColored } from "@/app/store/useColores";
 
 const DeskMenu = () => {
     const {openAbout} = useModal();
+    const {scrolled} = useColored();
+    const scrolledClr = scrolled ? `${styles.nav} ${styles.navScrolled}` : styles.nav;
     return(
-        <nav className={styles.nav}>   
+        <nav className={scrolledClr}>   
             <Link href="/" className={styles.navItem}>
                 Home
             </Link>

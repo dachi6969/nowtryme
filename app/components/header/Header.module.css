@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .header {
     background-color: transparent;
     height: 70px;
@@ -12,12 +14,13 @@
     right: 0;
     left: 0;
     transition: background-color 0.7s ease, box-shadow 0.7s ease;
+    color: #E6E6E6;
 }
 
 
 .headerClr{
-    background-color: #4c6153;
-    box-shadow: 0.5px 0.2px 2px black;
+    background-color: #E6E6E6;
+    border-bottom: 0.5px solid black;
 }
 
 .logo {
@@ -32,21 +35,22 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .mobileTitle{
-    color: white;
-    font-size: 25px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 31px;
+    font-family: 'Bebas Neue', sans-serif;
     letter-spacing: -1;
 }
 
 .title {
     display: none;
-    color: white;
-    letter-spacing: 1px;
     cursor: default;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: -1.5px;
+    font-size: 45px;
+    margin: 0 auto;
+
 }
 
 .iconWrapper{
@@ -57,12 +61,17 @@
 
 .gitIcon{
     cursor: pointer;
-    color: white;
 }
+
 
 .menuIcon{
     cursor: pointer;
-    color: white;
+}
+.menuIconClr,
+.gitIconClr,
+.titleClr,
+.mobileTitleClr{
+    color: black;
 }
 
 
@@ -75,9 +84,7 @@
 
     .title{
         display: block;
-        font-size: 35px;
-        margin: 0 auto;
-    };
+    }
 
     .mobileTitle{
         display: none;
@@ -86,7 +93,7 @@
     .logo{
         height: 70px;
         width: 70px;
-    };
+    }
 }
 
 @media (hover:hover) and (pointer: fine) {
@@ -94,8 +101,12 @@
         transform: translateY(-3px);
     }
     .header:hover{
-        background-color: #3F4F44;
-        box-shadow: 0.5px 0.5px 4px black;
+        background-color: #E6E6E6;
+        color: black;
+    }
+    
+    .header:hover .menuIcon {
+        color: black;
     }
 }
 

@@ -1,5 +1,5 @@
 .cardsWrapper{
-    background-color: #4f5f5563;
+    background-color: rgba(63, 79, 68, 0.514);
     margin-top: 50px;
     height: 700px;
     width: 90%;
@@ -39,15 +39,14 @@
     gap: 35px;
     font-size: 18px;
     font-weight: 300;
-    
 }
 
 .textdiv h1 {
-    color: #DCD7C9;
+    color: black;
 }
 
 .textdiv h4{
-    color: rgb(45, 43, 43);
+    color: black;
     font-weight: 300;
     line-height: 1.2;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

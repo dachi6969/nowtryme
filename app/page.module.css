@@ -12,14 +12,14 @@
     position: fixed;
     bottom: 100px;
     right: 60px;
-    background-color: #3f4f4468;
+    background-color: rgba(0, 0, 0, 0.37);
     border-radius: 50%;
     padding: 8px;
     height: 50px;
     width: 50px;
     cursor: pointer;
     color: white;
-    z-index: 9999;
+    z-index: 999;
 }
 .uparrow:hover{
     background-color: #3f4f449c;

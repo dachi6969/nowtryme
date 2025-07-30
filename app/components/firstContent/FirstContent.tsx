@@ -8,24 +8,24 @@ import { useInView } from "react-intersection-observer";
 
 const images = [
     {
-        desktop: "/desktop1.jpg",
-        mobile: "/mobile1.jpg"
+        desktop: "/desktop1.webp",
+        mobile: "/mobile1.webp"
     },
     {
-        desktop: "/desktop2.jpg",
-        mobile: "/mobile2.jpg"
+        desktop: "/desktop2.webp",
+        mobile: "/mobile2.webp"
     },
     {
-        desktop: "/desktop3.jpg",
-        mobile: "/mobile3.jpg"
+        desktop: "/desktop3.webp",
+        mobile: "/mobile3.webp"
     },
     {
         desktop: "/desktop4.jpg",
-        mobile: "/mobile4.jpg"
+        mobile: "/mobile4.webp"
     },
     {
-        desktop: "/desktop5.jpg",
-        mobile: "/mobile5.jpg"
+        desktop: "/desktop5.webp",
+        mobile: "/mobile5.webp"
     },
 ]
 
@@ -59,10 +59,10 @@ const FirstContent = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 100) {setScrolledTrue()}
+            if(window.scrollY > window.innerHeight - 70) {setScrolledTrue()}
             if(window.scrollY > 300) {setArrowHide(true)}
             if(window.scrollY < 300) {setArrowHide(false)}
-            if(window.scrollY < 100) {setScrolledFalse()};
+            if(window.scrollY < window.innerHeight - 70) {setScrolledFalse()};
         };
     
         window.addEventListener('scroll', handleScroll);
@@ -150,7 +150,7 @@ const FirstContent = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             className={styles.scrollArrow}
-              onClick={scroller}
+            onClick={scroller}
             >
             <line x1="12" y1="1" x2="12" y2="62" />
             <polyline points="4 52 12 62 20 52" />

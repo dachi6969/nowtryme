@@ -17,26 +17,31 @@ const Header = () => {
     const homeRoute = () => {
         router.push("/");
     }
-    const styling: string = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
+    const headStyle: string = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
+    const titleStyle: string = scrolled ? `${styles.title} ${styles.titleClr}` : styles.title;
+    const gitIconClr: string = scrolled ? `${styles.gitIcon} ${styles.gitIconClr}` : styles.gitIcon;
+    const menuIconClr: string = scrolled ? `${styles.menuIcon} ${styles.menuIconClr}` : styles.menuIcon;
+    const mobileTitleClr: string = scrolled ? `${styles.mobileTitle} ${styles.mobileTitleClr}` : styles.mobileTitle;
     return(
-        <header className={styling}>
+        <header className={headStyle}>
             
             <div className={styles.titleWrapper}>
-                <Image 
+                {/* <Image 
                 src="/logo.png" 
                 alt="Ucha's Furniture"
                 width={55}
                 height={55}
                 className={styles.logo}
                 onClick={homeRoute}
-            />
-            <span className={styles.title}>
+                /> */}
+            <span className={titleStyle}>
+                Ucha's Furniture
+            </span>
+            <span className={mobileTitleClr}>
                 Ucha's Furniture
             </span>
             </div>
-            <span className={styles.mobileTitle}>
-                Ucha's Furniture
-            </span>
+
 
             <div className={styles.iconWrapper}>
                 <a 
@@ -47,11 +52,11 @@ const Header = () => {
                 >
                     <Github 
                     aria-hidden={true}
-                    className={styles.gitIcon}
+                    className={gitIconClr}
                     />
                 </a>
                 <AlignJustify 
-                className={styles.menuIcon}
+                className={menuIconClr}
                 aria-label="menu icon"
                 onClick={openMobileM}
                 />

@@ -93,7 +93,8 @@ const FirstContent = () => {
             src={initialImg}
             alt="Furniture content" 
             fill 
-            style={{objectFit: "cover"}}       
+            style={{objectFit: "cover"}} 
+            // priority      
             />
         )}
 

@@ -1,7 +1,6 @@
 "use client"
 
 import { AlignJustify, Github } from "lucide-react";
-import Image from "next/image";
 import styles from "./Header.module.css";
 import { useRouter } from "next/navigation";
 import DeskMenu from "./desktopMenu/DeskMenu";
@@ -26,18 +25,10 @@ const Header = () => {
         <header className={headStyle}>
             
             <div className={styles.titleWrapper}>
-                {/* <Image 
-                src="/logo.png" 
-                alt="Ucha's Furniture"
-                width={55}
-                height={55}
-                className={styles.logo}
-                onClick={homeRoute}
-                /> */}
-            <span className={titleStyle}>
+            <span className={titleStyle} onClick={homeRoute}>
                 Ucha's Furniture
             </span>
-            <span className={mobileTitleClr}>
+            <span className={mobileTitleClr} onClick={homeRoute}>
                 Ucha's Furniture
             </span>
             </div>

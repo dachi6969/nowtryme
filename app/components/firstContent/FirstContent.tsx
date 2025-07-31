@@ -12,7 +12,7 @@ const images = [
         mobile: "/mobile1.webp"
     },
     {
-        desktop: "/desktop2.webp",
+        desktop: "/desktop2.jpg",
         mobile: "/mobile2.webp"
     },
     {
@@ -20,11 +20,11 @@ const images = [
         mobile: "/mobile3.webp"
     },
     {
-        desktop: "/desktop4.jpg",
+        desktop: "/desktop4.webp",
         mobile: "/mobile4.webp"
     },
     {
-        desktop: "/desktop5.webp",
+        desktop: "/desktop5.jpg",
         mobile: "/mobile5.webp"
     },
 ]

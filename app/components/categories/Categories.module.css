@@ -1,11 +1,10 @@
 .wrapper{
-    margin-top: 12%;
+    margin-top: 7%;
     height: 500px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 18px;
-
 }
 
 .title{
@@ -55,6 +54,11 @@
     height: 350px;
     padding-top: 5px;
     transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.itemTitle{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -68,7 +72,6 @@
 
 @media (hover: hover) and (pointer: fine) {
     .items:hover{
-        transform: scale(1.01);
-        transform: translateY(-5px);
+        filter: brightness(1.1);
     }
 }

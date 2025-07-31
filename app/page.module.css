@@ -22,7 +22,7 @@
     z-index: 999;
 }
 .uparrow:hover{
-    background-color: #3f4f449c;
+    background-color: rgba(0, 0, 0, 0.47);
 }
 
 @media (max-width: 480px) {

@@ -27,14 +27,9 @@ const items = [
 ]
 
 const Categories = () => {
+    
     return(
-        <motion.div className={styles.wrapper}
-        initial={{ x: "-100%" }}
-        whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        
-        >
+        <div className={styles.wrapper}  >
             <div className={styles.title}>
                 <h1>Categories </h1>
                 <h4>Check everything we offering to you !</h4>
@@ -43,16 +38,22 @@ const Categories = () => {
             <div className={styles.categories}>
                 {items.map((item,index) => (
 
-                        <div className={styles.itemWrapper} key={index}>
-                            <img src={item.img} alt={item.alt} className={styles.items}/>
-                            <span>
+                        <motion.div className={styles.itemWrapper} key={index}
+                        initial={{translateX: -100}}
+                        whileInView={{translateX: 0}}
+                        transition={{duration: 0.4}}
+                        viewport={{once: true, amount: 0.3}}
+                        >
+                            <img src={item.img} alt={item.alt} className={styles.items}
+                            />
+                            <span className={styles.itemTitle}>
                                 {item.title}
                             </span>
-                        </div>
+                        </motion.div>
                     ))
                 }
             </div>
-        </motion.div>
+        </div>
     )
 }
 

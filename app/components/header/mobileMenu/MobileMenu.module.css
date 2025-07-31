@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .modal{
     position: fixed;
     z-index: 9900;
@@ -53,14 +55,15 @@
 
 .title {
     color: black;
-    font-weight: 600;
+    font-weight: 300;
     position: relative;
     margin-bottom: 30px;
-    top: 10px;
-    left: 12px;
+    top: 15px;
+    left: 20px;
     font-size: 30px;
     letter-spacing: 1px;
     cursor: default;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .socialMedia{
@@ -90,8 +93,8 @@
 
 @media (hover:hover) and (pointer: fine) {
     .menuItems:hover{
-        background-color: #3f4f44ba;
-        color: #cec6af;
+        background-color: rgba(0, 0, 0, 0.707);
+        color: white;
     }
     .socialIcons:hover{
         transform: scale(1.15);

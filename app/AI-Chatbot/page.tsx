@@ -27,11 +27,6 @@ const AI_Page = () => {
         setMessages(updatedMessages);
         setInput('');
         setLoading(true);
-        const SYSTEM_PROMPT = {
-          role: "system",
-          content: "You are a concise interior design assistant. Respond in no more than 3 short bullet points. Be helpful and brief.",
-        };
-        
         try {
           const res = await fetch('/api/chat', {
             method: 'POST',

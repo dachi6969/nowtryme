@@ -6,12 +6,6 @@ import Footer from "./components/footer/Footer";
 import { usePathname } from "next/navigation";
 
 
-// export const metadata: Metadata = {
-//   title: "Ucha's Furniture",
-//   description: "building without purpose",
-// };
-
-
 export default function RootLayout({
   children,
 }: Readonly<{

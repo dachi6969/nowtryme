@@ -3,11 +3,18 @@
 import { useState } from "react";
 import styles from "./page.module.css"
 import { CircleFadingArrowUp, CirclePause } from "lucide-react";
+import { motion } from "framer-motion";
 
 type Message = {
     role: 'user' | 'assistant';
     content: string;
 };
+
+const preQuestions = [
+  "Can you help me choose the best sofa for a small living room?",
+  "What's the difference between solid wood and MDF furniture?",
+  "Do you have any modern-style dining tables in stock?"
+]
 
 const AI_Page = () => {
     const [input, setInput] = useState<string>('');
@@ -55,14 +62,21 @@ const AI_Page = () => {
       const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') sendMessage();
       };
+      const preQuest = (current: string) => {
+        setInput(current)
+      }
 
     return(
         <div className={styles.main}>
             <div className={styles.chat}>
               {messages.length === 0 && 
-              <div className={styles.title}>
+              <motion.div className={styles.title}
+              initial={{opacity: 0, translateX: -100}}
+              animate={{opacity: 1, translateX: 0}}
+              transition={{duration: 0.5, delay: 0.5}}
+              >
                 How can I help you?
-              </div>}
+              </motion.div>}
             {messages.map((msg, i) => (
             <div key={i} className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}>
             {msg.content}
@@ -71,6 +85,19 @@ const AI_Page = () => {
             {loading && <div className={styles.assistantMsg}>Typing...</div>}
             </div>
             <div className={`${styles.handlers} ${inputMove}`}>
+              {messages.length === 0 && <div style={{display: "flex", gap: "20px", maxWidth: "90vw", overflowX: "auto", scrollbarWidth: "none", padding: "10px"}}>
+                {preQuestions.map((item,i) => (
+                  <motion.div className={styles.pre} key={i}
+                  initial={{opacity: 0,}}
+                  animate={{opacity: 1 }}
+                  transition={{duration: 2}}
+                  onClick={() => preQuest(item)}
+                  >
+                    {item}
+                  </motion.div>
+                ))}
+                </div>}
+              <div style={{display: "flex", alignItems: "center", maxWidth: "720px", width: "90vw", gap: "10px"}}> 
                 <input 
                 value={input}
                 onChange={inputBind}
@@ -86,6 +113,7 @@ const AI_Page = () => {
                 size={40} 
                 onClick={sendMessage}
                 />}
+                </div>
             </div>
         </div>
     )

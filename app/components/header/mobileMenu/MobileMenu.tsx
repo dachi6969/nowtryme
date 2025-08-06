@@ -1,7 +1,7 @@
 "use client"
 import { useModal } from "@/app/store/useMenuStore";
 import styles from "./MobileMenu.module.css";
-import { BookImage, Contact, Facebook, Github, House, Info, Instagram, X } from "lucide-react";
+import { BookImage, Contact, Facebook, Github, House, Info, Instagram, MessageCircle, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const menuList = [
@@ -9,6 +9,7 @@ const menuList = [
     {title: "About", icon: <Info />},
     {title: "Contact", icon: <Contact />},
     {title: "Catalogue", icon: <BookImage />},
+    {title: "AI-Chat", icon: <MessageCircle />},
 
 ]
 
@@ -22,6 +23,10 @@ const MobileMenu = () => {
 
     const navHome = () => {
         router.push("/");
+        closeMobileM();
+    }
+    const navChat = () => {
+        router.push("/AI-Chatbot");
         closeMobileM();
     }
     return(
@@ -42,6 +47,8 @@ const MobileMenu = () => {
                                 }else if(item.title === "About") {
                                     openAbout();
                                     closeMobileM();
+                                }else if (item.title === "AI-Chat") {
+                                    navChat();
                                 }
                             }}
                             >

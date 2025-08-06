@@ -13,6 +13,9 @@ const DeskMenu = () => {
             <Link href="/" className={styles.navItem}>
                 Home
             </Link>
+            <Link href="/AI-Chatbot" className={styles.navItem}>
+                AI-Chat
+            </Link>
             <span className={styles.navItem} onClick={openAbout}>
                 About
             </span>

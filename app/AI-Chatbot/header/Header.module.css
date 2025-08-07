@@ -2,8 +2,8 @@
 
 .header{
     height: 70px;
-    border-bottom: 1px solid white;
-    background-color: black;
+    /* border-bottom: 1px solid white; */
+    /* background-color: black; */
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -12,12 +12,14 @@
     padding: 16px;
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s ease;
 }
 
 .mainTitle{
-    color: white;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: -1.5px;
     font-size: 35px;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
+

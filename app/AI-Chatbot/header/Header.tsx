@@ -8,22 +8,13 @@ import { useTheme } from "@/app/store/useTheme";
 const Header = () => {
     const router = useRouter();
     const {themeOn,lightOff,lightOn} = useTheme();
-    const light = "#E6E6E6";
-    const themeChange = themeOn ? light : "black";
-    const themeReverse = themeOn ? 'black' : light;
     const homeRoute = () => {
         router.push("/");
     }
     return(
-        <header className={styles.header}
-        style={{
-            backgroundColor: themeChange,
-            borderBottom: `1px solid ${themeReverse}`
-        }}
-        >
+        <header className={styles.header}>
             <span className={styles.mainTitle} 
             onClick={homeRoute}
-            style={{color: themeReverse}}
             >
                 Ucha's Furniture
             </span>

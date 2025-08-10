@@ -8,6 +8,12 @@ type useTheme = {
 
 export const useTheme = create<useTheme>((set) => ({
     themeOn: false,
-    lightOff: () => set({themeOn: false}),
-    lightOn: () => set({themeOn: true}),
+    lightOff: () => {
+        document.documentElement.className = 'dark';
+        set({ themeOn: false })
+    },
+    lightOn: () => {
+        document.documentElement.className = 'light';
+        set({ themeOn: true })
+    },
 }))

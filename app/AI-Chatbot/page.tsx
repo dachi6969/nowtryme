@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css"
 import { CircleFadingArrowUp, CirclePause } from "lucide-react";
 import { motion } from "framer-motion";
@@ -23,9 +23,7 @@ const AI_Page = () => {
     const [loading, setLoading] = useState(false);
     const [inputMove,setInputMove] = useState(styles.off);
     const {themeOn,} = useTheme();
-    const light = "#E6E6E6";
-    const themeChange = themeOn ? light : "black";
-    const themeReverse = themeOn ? 'black' : light;
+    const ref = useRef<HTMLDivElement | null>(null);
     
     const inputBind = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
@@ -70,18 +68,15 @@ const AI_Page = () => {
       const preQuest = (current: string) => {
         setInput(current)
       }
+      useEffect(() => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+      },[messages])
 
     return(
-        <div className={styles.main}
-        style={{
-          backgroundColor: themeChange,
-          color: themeReverse
-        }}
-        >
-            <div className={styles.chat} style={{backgroundColor: themeChange}}>
+        <div className={styles.main}>
+            <div className={styles.chat}>
               {messages.length === 0 && 
               <motion.div className={styles.title}
-              style={{color: themeReverse}}
               initial={{opacity: 0, translateX: -100}}
               animate={{opacity: 1, translateX: 0}}
               transition={{duration: 0.5, delay: 0.5}}
@@ -89,20 +84,20 @@ const AI_Page = () => {
                 How can I help you?
               </motion.div>}
             {messages.map((msg, i) => (
-            <div key={i} className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}
-            style={{color: light}}>
+            <div key={i} className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}>
             {msg.content}
             </div>
             ))}
-            {loading && <div className={styles.assistantMsg} style={{color: light}}>Typing...</div>}
+            {loading && <div className={styles.assistantMsg}>Typing...</div>}
+            <div ref={ref}></div>
             </div>
+            <div className={styles.bottomMask}></div>
             <div className={`${styles.handlers} ${inputMove}`}>
-              {messages.length === 0 && <div style={{display: "flex", gap: "20px", maxWidth: "90vw", overflowX: "auto", scrollbarWidth: "none", padding: "10px"}}>
+              {messages.length === 0 && 
+              <div className={styles.preWrapper}>
                 {preQuestions.map((item,i) => (
-                  <motion.div className={styles.pre} style={{
-                    backgroundColor: themeOn ? 'black' : '#6f6e6e',
-                    color: light
-                  }}
+                  <motion.div className={styles.pre} 
+                  style={{ backgroundColor: themeOn ? 'black' : '#6f6e6e' }}
                   key={i}
                   initial={{opacity: 0,}}
                   animate={{opacity: 1 }}
@@ -113,29 +108,30 @@ const AI_Page = () => {
                   </motion.div>
                 ))}
                 </div>}
-              <div style={{display: "flex", alignItems: "center", maxWidth: "720px", width: "90vw", gap: "10px"}}> 
+              <div className={styles.inputWrapper} 
+              style={{
+                backgroundColor: themeOn ? "#E6E6E6" : "#202123",
+                border: themeOn ? '1.5px solid black' : 'none'
+              }}
+              > 
                 <input 
                 value={input}
                 onChange={inputBind}
                 onKeyDown={handleKey}
                 type="text" 
-                placeholder="Ask to Gpt..." 
-                className={styles.inputing}
-                style={{
-                  color: themeReverse,
-                  backgroundColor: themeOn ? light : "#202123",
-                  border: themeOn ? '2px solid black' : 'none'
-                }}
-                />
-               {loading ? 
-                <CirclePause size={40} />: 
+                placeholder="share your mind to AI..." 
+                className={styles.inputing}/>
+
+               {loading ?
+                <CirclePause size={38} 
+                className={styles.buttoning}/>: 
                 <CircleFadingArrowUp 
                 className={styles.buttoning} 
-                size={40} 
+                size={38} 
                 onClick={sendMessage}
-                color={themeReverse}
                 />}
                 </div>
+
             </div>
         </div>
     )

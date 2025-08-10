@@ -1,161 +1,179 @@
 .main {
-    /* background-color: black; */
-    padding-top: 70px;
-    /* color: white; */
-    min-height: 100dvh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: all 0.5s ease;
+  background-color: var(--bg-color);
+  color: var(--color);
+  padding-top: 70px;
+  min-height: 100dvh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.chat {
+  background-color: var(--bg-color);
+  overflow-y: auto;
+  padding: 40px 20px;
+  padding-bottom: 140px; 
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  transition: background-color 0.5s ease;
+  flex-grow: 1; 
+  box-sizing: border-box;
+}
+
+.handlers {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 999; 
+  padding-bottom: 10px;
+}
+
+
+.inputing {
+  flex-grow: 1;  
+  padding: 10px 18px;
+  border-radius: 35px;
+  color: var(--color);
+  border: none;
+  font-size: 16px;
+  height: 70px;
+  transition: background-color 0.5s ease;
+  background-color: transparent;
+}
+
+.title {
+  color: var(--color);
+  font-size: 36px;
+  margin: 0 auto;
+}
+
+.inputing::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.inputing:focus {
+  outline: none;
+}
+
+.buttoning {
+  border: none;
+  color: var(--color);
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.userMsg, .assistantMsg {
+  max-width: 100%;      
+  display: inline-block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #E6E6E6;
+}
+
+.userMsg {
+  text-align: right;
+  background-color: grey;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 6px 0;
+  align-self: flex-end; 
+}
+
+.assistantMsg {
+  text-align: left;
+  background-color: #202123;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 6px 0;
+  align-self: flex-start;
+}
+
+.pre {
+  padding: 13px;
+  border-radius: 15px;
+  color: #E6E6E6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  width: 200px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  max-width: 720px;
+  width: 95vw;
+  border-radius: 35px;
+}
+
+.preWrapper {
+  display: flex;
+  gap: 20px;
+  max-width: 90vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 10px;
+}
+
+.bottomMask {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; 
+  background-color: inherit;
+  z-index: 998;
+}
+
+
+@media (hover:hover) and (pointer: fine) {
+  .pre:hover {
+    filter: brightness(1.2);
+    transform: translateY(-5px);
   }
-  
-  .chat {
-    /* background-color: black; */
-    overflow-y: auto;
-    padding: 40px 20px 120px; 
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    transition: all 0.5s ease;
-  }
-  
+}
+
+@media (max-width: 600px) {
   .handlers {
-    position: fixed;
-    bottom: 20px; 
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-    gap: 30px;
-    /* width: 90vw; */
-    /* max-width: 720px;  */
-    padding: 10px 15px;
-    border-radius: 30px; 
+    width: 95vw;
   }
   .inputing {
-    flex-grow: 1;  
-    padding: 0 15px;
-    border-radius: 35px;
-    border: none;
-    /* color: white; */
-    font-size: 16px;
-    /* background-color: #202123;  */
-    height: 70px;
-    transition: all 0.5s ease;
+    height: 55px;
   }
+  .chat {
+    width: 100%;
+  }
+  .title {
+    font-size: 30px;
+    margin: 100px auto;
+  }
+}
 
-  .title{
-    font-size: 36px;
-    margin: 0 auto;
+@media (min-width: 600px) {
+  .off {
+    bottom: 20%;
   }
-  
-  .inputing::placeholder {
-    color: #999;
-    opacity: 1;
+  .on {
+    bottom: 0;
+    transition: all 0.3s ease;
   }
-  
-  .inputing:focus {
-    outline: none;
-    background-color: #1e1e1e;
-  }
-  
-  .buttoning {
-    border: none;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    /* color: white; */
-    transition: all 0.5s ease;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .buttoning:hover {
-    transform: scale(1.05);
-  }
-
-  .userMsg, .assistantMsg {
-    max-width: 100%;      
-    display: inline-block;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .userMsg {
-    text-align: right;
-    background-color: grey;
-    padding: 8px 12px;
-    border-radius: 12px;
-    margin: 6px 0;
-    align-self: flex-end; 
-  }
-  
-  .assistantMsg {
-    text-align: left;
-    background-color: #202123;
-    padding: 8px 12px;
-    border-radius: 12px;
-    margin: 6px 0;
-    align-self: flex-start;
-  }
-
-  .pre{
-    padding: 13px;
-    /* background-color: rgb(0, 0, 0); */
-    border-radius: 15px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    height: 80px;
-    width: 200px;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-
-  @media (hover:hover) and (pointer: fine) {
-    .pre:hover{
-      filter: brightness(1.2);
-      transform: translateY(-5px);
-    }
-  }
-
-  @media (max-width: 600px) {
-    .handlers {
-      width: 95vw;
-    }
-    .inputing{
-        height: 50px;
-    }
-
-    .chat{
-      width: 100%;
-    }
-    .title{
-      font-size: 30px;
-      margin: 100px auto;
-    }
-  }
-  
-  @media (min-width: 600px) {
-    .off {
-      bottom: 30%;
-    }
-  
-    .on {
-      bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-  }
-  
+}

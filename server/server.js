@@ -6,14 +6,18 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 
-server.get("/products/:category", (req,res) => {
+server.get("/products/:category", (req, res) => {
     const { category } = req.params;
-    res.send(products[category]);
+    const data = products[category];
+
     if (!data) {
         return res.status(404).send({ message: "Category not found" });
     }
-})
 
-server.listen(4000,() => {
-    console.log('server 4000 is running!')
-})
+    res.send(data);
+});
+
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

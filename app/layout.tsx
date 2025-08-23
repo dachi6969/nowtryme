@@ -12,14 +12,15 @@ export default function RootLayout({
 }>) {
 
   const pathname = usePathname();
-  const isAuth = pathname.startsWith("/AI-Chatbot")
+  const isAuth = pathname.startsWith("/AI-Chatbot");
+  const isProducts = pathname.startsWith("/products/")
 
   return (
     <html lang="en">
       <body>
-        {(!isAuth) && <Header />}
+        { !( isAuth || isProducts) && <Header /> }
         {children}
-        {(!isAuth) && <Footer />}
+        { !(isAuth || isProducts) && <Footer /> }
       </body>
     </html>
   );

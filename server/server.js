@@ -1,8 +1,10 @@
 import express from "express";
 import { products } from "./data.js";
+import cors from "cors";
 
 const server = express();
 server.use(express.json());
+server.use(cors());
 
 server.get("/products/:category", (req,res) => {
     const { category } = req.params;

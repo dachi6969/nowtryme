@@ -1,0 +1,74 @@
+.main{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+
+.titleDiv{
+    /* background-color: red; */
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 1px solid black; */
+    font-size: 40px;
+    gap: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    letter-spacing: 1.5px;
+    transition: font-size 0.5s ease;
+    overflow: hidden;
+}
+.titleDiv span{
+    font-size: 20px;
+    color: grey;
+}
+
+.menuWrapper{
+    /* background-color: red; */
+    width: 100%;
+    padding: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    /* margin: 0 auto; */
+}
+.menuItem{
+    background-color: rgba(128, 128, 128, 0.253);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 600px) {
+    .titleDiv{
+        font-size: 30px;
+        border-bottom: 1px solid black;
+        height: 150px;
+    }
+    .titleDiv span{
+        font-size: 13px;
+        text-align: center;
+    }
+    .menuWrapper{
+        justify-content: flex-start;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menuItem:hover{
+        transform: translateY(-5px);
+    }
+}

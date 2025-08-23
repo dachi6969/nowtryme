@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import styles from "./Categories.module.css";
+import { useRouter } from "next/navigation";
 
 const items = [
     {
@@ -27,6 +28,7 @@ const items = [
 ]
 
 const Categories = () => {
+    const currentRoute = useRouter();
     
     return(
         <div className={styles.wrapper}  >
@@ -38,18 +40,14 @@ const Categories = () => {
             <div className={styles.categories}>
                 {items.map((item,index) => (
 
-                        <motion.div className={styles.itemWrapper} key={index}
-                        initial={{translateX: -100}}
-                        whileInView={{translateX: 0}}
-                        transition={{duration: 0.4}}
-                        viewport={{once: true, amount: 0.3}}
-                        >
+                        <div className={styles.itemWrapper} key={index}>
                             <img src={item.img} alt={item.alt} className={styles.items}
+                            onClick={() => {currentRoute.push(`/products/${item.title}`)}}
                             />
                             <span className={styles.itemTitle}>
                                 {item.title}
                             </span>
-                        </motion.div>
+                        </div>
                     ))
                 }
             </div>

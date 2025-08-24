@@ -23,13 +23,13 @@ const Header = () => {
             <Moon 
             size={35} 
             color={'black'} 
-            style={{paddingTop: "4px"}} 
+            style={{paddingTop: "4px",cursor: "pointer"}} 
             onClick={lightOff}
             />:
             <Sun 
             size={35} 
             color={'#E6E6E6'} 
-            style={{paddingTop: "4px"}} 
+            style={{paddingTop: "4px", cursor: "pointer"}} 
             onClick={lightOn}
             />}
         </header>

@@ -7,18 +7,16 @@
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
+    min-height: 400px;
   }
   
   .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* border-radius: 12px; */
     overflow: hidden;
-    /* background: #fff; */
-    /* padding: 12px; */
     cursor: pointer;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -70,6 +68,52 @@
     color: grey;
 }
 
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; 
+  z-index: 10;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; 
+  border-top: 6px solid orange; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 40px 0;
+}
+
+.addDiv{
+  position: fixed;
+  bottom: 20px;
+  left: 50%; 
+  transform: translateX(-50%);
+  background-color: green;
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: white;
+}
+
+
 
 @media (max-width: 600px) {
     .card{
@@ -77,7 +121,6 @@
         padding: 0;
         border-radius: 0;
         box-shadow: none;
-        /* border-bottom: 1px solid black; */
     }
     .cardWrap{
         grid-template-columns: minmax(90vw, 1fr);
@@ -94,6 +137,7 @@
     .image{
         height: 390px;
     }
+
 }
 
 @media (min-width: 600px) and (max-width: 900px) {

@@ -85,7 +85,7 @@ const AI_Page = () => {
               </motion.div>}
             {messages.map((msg, i) => (
             <div key={i} className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}>
-            {msg.content}
+              {msg.content}
             </div>
             ))}
             {loading && <div className={styles.assistantMsg}>Typing...</div>}

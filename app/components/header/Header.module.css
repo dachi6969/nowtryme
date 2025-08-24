@@ -3,7 +3,7 @@
 .header {
     background-color: transparent;
     height: 70px;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,18 +39,19 @@
 
 .mobileTitle{
     font-size: 31px;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue';
     letter-spacing: -1;
 }
 
 .title {
     display: none;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue';
     letter-spacing: -1.5px;
     font-size: 45px;
     margin: 0 auto;
     cursor: pointer;
 }
+
 
 .iconWrapper{
     display: flex;
@@ -60,6 +61,8 @@
 
 .gitIcon{
     cursor: pointer;
+    display: flex;
+    gap: 18px;
 }
 
 
@@ -116,4 +119,5 @@
     .gitIcon{
         display: none;
     }
+
 }

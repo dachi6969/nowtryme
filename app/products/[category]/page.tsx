@@ -4,7 +4,6 @@ import { useParams, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import ProductCards from "./cards/Cards";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const categories = [
     'Armchair',

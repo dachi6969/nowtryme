@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./Header.module.css";
-import { Search, ShoppingCart } from "lucide-react";
+import Cart from "@/app/components/cart/Cart";
 
 const Header = () => {
     const route = useRouter();
@@ -15,8 +15,7 @@ const Header = () => {
                 Ucha's Furniture
             </span>
             <div style={{paddingTop: "4px",display: "flex", gap: "15px"}}>
-                {/* <Search size={25} /> */}
-                <ShoppingCart size={27}/>
+                <Cart />
             </div>
         </header>
     )

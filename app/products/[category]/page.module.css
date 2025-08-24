@@ -4,18 +4,16 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* min-height: 100vh; */
+    min-height: 100vh;
 }
 
 .titleDiv{
-    /* background-color: red; */
     width: 100vw;
     height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border-bottom: 1px solid black; */
     font-size: 40px;
     gap: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -30,7 +28,6 @@
 }
 
 .menuWrapper{
-    /* background-color: red; */
     width: 100%;
     padding: 16px;
     overflow-x: auto;
@@ -39,7 +36,6 @@
     display: flex;
     gap: 30px;
     justify-content: center;
-    /* margin: 0 auto; */
 }
 .menuItem{
     background-color: rgba(128, 128, 128, 0.253);

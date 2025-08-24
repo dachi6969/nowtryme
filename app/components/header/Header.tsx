@@ -8,13 +8,18 @@ import MobileMenu from "./mobileMenu/MobileMenu";
 import { useModal } from "@/app/store/useMenuStore";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
 import { useColored } from "@/app/store/useColores";
+import Cart from "../cart/Cart";
 
 const Header = () => {
     const router = useRouter();
     const {openMobileM} = useModal();
     const {scrolled} = useColored();
+
     const homeRoute = () => {
         router.push("/");
+    }
+    const gitRoute = () => {
+        window.open("https://github.com/dachi6969", "_blank")
     }
     const headStyle: string = scrolled ? `${styles.header} ${styles.headerClr}` : styles.header;
     const titleStyle: string = scrolled ? `${styles.title} ${styles.titleClr}` : styles.title;
@@ -35,21 +40,21 @@ const Header = () => {
 
 
             <div className={styles.iconWrapper}>
-                <a 
-                href="https://github.com/dachi6969"
-                target="_blank"
-                aria-label="github repo link"
-                style={{paddingTop:"4px"}}
-                >
+
+                <div className={gitIconClr}>
+                    <Cart />
                     <Github 
                     aria-hidden={true}
-                    className={gitIconClr}
+                    size={27}
+                    onClick={gitRoute}
                     />
-                </a>
+                </div>
+
                 <AlignJustify 
                 className={menuIconClr}
                 aria-label="menu icon"
                 onClick={openMobileM}
+                size={27}
                 />
             </div>
             

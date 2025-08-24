@@ -21,7 +21,7 @@ type Products = {
 const ProductCards = ({category}: PathnameProps) => {
     const [products,setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { cartItems, addToCart } = useCart();
+    const { addToCart } = useCart();
     const [addMessage,setAddMessage] = useState<boolean>(false);
     
     useEffect(() => {

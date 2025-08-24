@@ -1,5 +1,4 @@
 
-import { motion } from "framer-motion";
 import styles from "./Categories.module.css";
 import { useRouter } from "next/navigation";
 

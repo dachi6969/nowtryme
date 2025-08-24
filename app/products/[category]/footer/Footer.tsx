@@ -1,5 +1,5 @@
 "use client"
-import { Facebook, Github, Instagram } from "lucide-react";
+import { Github, Instagram } from "lucide-react";
 import styles from "./footer.module.css";
 
 

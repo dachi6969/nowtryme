@@ -11,11 +11,17 @@ import { useCart } from "@/app/store/useCart";
 type PathnameProps = {
     category?: string;
 }
+type Products = {
+    img: string;
+    title: string;
+    category?: string;
+    price: string;
+}
 
 const ProductCards = ({category}: PathnameProps) => {
     const [products,setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { addToCart } = useCart();
+    const { cartItems, addToCart } = useCart();
     const [addMessage,setAddMessage] = useState<boolean>(false);
     
     useEffect(() => {
@@ -57,7 +63,7 @@ const ProductCards = ({category}: PathnameProps) => {
                 <div className={styles.empty}>No products found.</div>
             )}
 
-            {!loading && products.map((item: any,index) => (
+            {!loading && products.map((item: Products,index) => (
                 <motion.div 
                     className={styles.card} 
                     key={index}

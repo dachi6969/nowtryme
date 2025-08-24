@@ -6,6 +6,12 @@ import { useCart } from "@/app/store/useCart";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+type Item = {
+    img: string;
+    price: string;
+    title: string;
+}
+
 
 const Cart = () => {
     const {cartItems, clearCart, removeFromCart, cartOpen, openCart, closeCart} = useCart();
@@ -26,7 +32,7 @@ const Cart = () => {
                     <span style={{color: "grey",fontSize:"18px"}}>Cart is empty...</span>
                 }
                 {cartItems.length !== 0 && 
-                cartItems.map((item: any,index: number) => (
+                cartItems.map((item: Item,index: number) => (
                     <div key={index} className={styles.eachProduct}>
                         <Image src={item.img} alt={item.title} height={110} width={120} style={{borderRadius: "7px"}}/>
                         <span>{item.title}</span>

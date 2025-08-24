@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
 type CartItem = {
-  title?: string;
-  img?: string;
-  price?: string;
+  title: string;
+  img: string;
+  price: string;
   category?: string;
 };
 

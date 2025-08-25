@@ -89,7 +89,7 @@ const ProductCards = ({category}: PathnameProps) => {
             ))}
             {addMessage && 
             <motion.div className={styles.addDiv}
-            initial={{ y: 100, opacity: 0}}
+            initial={{ y: 100, opacity: 0, x: "-50%" }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
             >

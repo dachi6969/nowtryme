@@ -102,16 +102,19 @@
   padding: 40px 0;
 }
 
-.addDiv{
+.addDiv {
   position: fixed;
   bottom: 20px;
-  left: 50%; 
-  transform: translateX(-50%);
+  left: 50%;
   background-color: green;
   border-radius: 10px;
   padding: 12px 18px;
   color: white;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 9999;
 }
+
 
 
 

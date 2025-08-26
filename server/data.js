@@ -208,5 +208,6 @@ export const products = {
             "price": "33",
             "category": "Lighting"
         }
+        
     ]
 }

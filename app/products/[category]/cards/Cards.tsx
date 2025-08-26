@@ -32,6 +32,7 @@ const ProductCards = ({category}: PathnameProps) => {
           try {
             const result = await axios.get(`https://uchas-furniture-backend.onrender.com/products/${category}`);
             setProducts(result.data); 
+            console.log(result.data)
           } catch (error) {
             console.error("Error fetching products:", error);
           } finally {
@@ -49,7 +50,6 @@ const ProductCards = ({category}: PathnameProps) => {
         },2000)
         return () => clearTimeout(timer)
     },[addMessage])
-    console.log(addMessage)
     
     return(
         <div className={styles.cardWrap}>

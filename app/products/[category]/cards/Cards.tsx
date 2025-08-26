@@ -26,13 +26,17 @@ const ProductCards = ({category}: PathnameProps) => {
     
     useEffect(() => {
         if (!category) return;
+        
+        const controller = new AbortController();
 
         async function fetchProducts() {
           setLoading(true);
           try {
-            const result = await axios.get(`https://uchas-furniture-backend.onrender.com/products/${category}`);
+            const result = await axios.get(
+                `https://uchas-furniture-backend.onrender.com/products/${category}`, 
+                {signal: controller.signal}
+            );
             setProducts(result.data); 
-            console.log(result.data)
           } catch (error) {
             console.error("Error fetching products:", error);
           } finally {
@@ -41,6 +45,9 @@ const ProductCards = ({category}: PathnameProps) => {
         }
 
         fetchProducts();
+        return () => {
+            controller.abort();
+        }
     }, [category]);
 
     useEffect(() => {

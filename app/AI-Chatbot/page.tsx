@@ -5,6 +5,8 @@ import styles from "./page.module.css"
 import { CircleFadingArrowUp, CirclePause } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "../store/useTheme";
+import CurrentTime from "./currentTime/CurrentTime";
+import React from "react";
 
 type Message = {
     role: 'user' | 'assistant';
@@ -83,12 +85,18 @@ const AI_Page = () => {
               >
                 How can I help you?
               </motion.div>}
-            {messages.map((msg, i) => (
-            <div key={i} className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}>
-              {msg.content}
-            </div>
-            ))}
-            {loading && <div className={styles.assistantMsg}>Typing...</div>}
+              {messages.map((msg, i) => (
+                <React.Fragment key={i}>
+                  <div className={msg.role === 'user' ? styles.userMsg : styles.assistantMsg}>
+                    {msg.content}
+                  </div>
+                  <div style={{ textAlign: msg.role === 'user' ? 'end' : 'start' }}>
+                    <CurrentTime />
+                  </div>
+                </React.Fragment>
+              ))}
+
+            {loading && <div className={styles.assistantMsg}>Thinking...</div>}
             <div ref={ref}></div>
             </div>
             <div className={styles.bottomMask}></div>

@@ -26,29 +26,35 @@ const ProductCards = ({category}: PathnameProps) => {
     
     useEffect(() => {
         if (!category) return;
-        
+      
         const controller = new AbortController();
-
+      
         async function fetchProducts() {
           setLoading(true);
           try {
             const result = await axios.get(
-                `https://uchas-furniture-backend.onrender.com/products/${category}`, 
-                {signal: controller.signal}
+              `https://uchas-furniture-backend.onrender.com/products/${category}`, 
+              { signal: controller.signal }
             );
-            setProducts(result.data); 
-          } catch (error) {
-            console.error("Error fetching products:", error);
+            setProducts(result.data);
+          } catch (error: any) {
+            if (error.name === "CanceledError") {
+              console.log("Request canceled");
+            } else {
+              console.error("Error fetching products:", error);
+            }
           } finally {
             setLoading(false);
           }
         }
-
+      
         fetchProducts();
+      
         return () => {
-            controller.abort();
-        }
-    }, [category]);
+          controller.abort();
+        };
+      }, [category]);
+      
 
     useEffect(() => {
         if (!addMessage) return;

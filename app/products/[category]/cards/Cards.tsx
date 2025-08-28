@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./Cards.module.css";
 import axios from "axios";
 import Image from "next/image";
@@ -19,12 +19,20 @@ type Products = {
     price: string;
 }
 
+type Order = 'asc' | 'des' | 'default'
+
 const ProductCards = ({ category }: PathnameProps) => {
     const [products, setProducts] = useState<Products[]>([]);
+    const [prioProducts,setPrioProducts] = useState<Products[]>([]);
     const [loading, setLoading] = useState(false);
     const { addToCart } = useCart();
     const [addMessage, setAddMessage] = useState(false);
+    const [priorityPrice,setPriorityPrice] = useState<Order>('default');
 
+    const priorityChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setPriorityPrice(e.target.value as Order)
+    }
+ 
     useEffect(() => {
         if (!category) return;
 
@@ -35,6 +43,7 @@ const ProductCards = ({ category }: PathnameProps) => {
             try {
                 const result = await axios.get(`https://uchas-furniture-backend.onrender.com/products/${category}`);
                 setProducts(result.data);
+                setPrioProducts(result.data);
             } catch (error) {
                 console.error("Error fetching products:", error);
             } finally {
@@ -46,13 +55,43 @@ const ProductCards = ({ category }: PathnameProps) => {
     }, [category]);
 
     useEffect(() => {
+        if(priorityPrice === 'default') {
+            setProducts(prioProducts);
+        }
+        else if(priorityPrice === 'asc') {
+            const res = [...prioProducts].sort((a:Products,b:Products) => Number(a.price) - Number(b.price));
+            setProducts(res);
+        }
+        else if(priorityPrice === 'des') {
+            const res = [...prioProducts].sort((a:Products,b:Products) => Number(b.price) - Number(a.price));
+            setProducts(res);
+        }
+    },[priorityPrice,prioProducts])
+    
+    useEffect(() => {
         if (!addMessage) return;
 
         const timer = setTimeout(() => setAddMessage(false), 2000);
         return () => clearTimeout(timer);
     }, [addMessage]);
-
+    
     return (
+        <>
+            <div className={styles.menu}>
+            <div className={styles.selectWrapper}>
+            <label htmlFor="priority">Sort by price:</label>
+                <select 
+                id="priority"
+                name="priority"
+                className={styles.selectPrice}
+                value={priorityPrice} 
+                onChange={priorityChange}>
+                    <option>default</option>
+                    <option>asc</option>
+                    <option>des</option>
+                </select>
+            </div>
+            </div>
         <div className={styles.cardWrap}>
             {loading && (
                 <div className={styles.loadingOverlay}>
@@ -101,6 +140,7 @@ const ProductCards = ({ category }: PathnameProps) => {
                 </motion.div>
             )}
         </div>
+        </>
     );
 }
 

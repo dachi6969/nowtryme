@@ -1,34 +1,45 @@
-import { create } from "zustand";
 
-type CartItem = {
-  title: string;
+"use client";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+type Item = {
   img: string;
   price: string;
-  category?: string;
+  title: string;
 };
 
-type UseCart = {
-  cartItems: CartItem[];
-  addToCart: (item: CartItem) => void;
-  removeFromCart: (index: number) => void; 
-  clearCart: () => void;
+type CartState = {
+  cartItems: Item[];
   cartOpen: boolean;
+  addToCart: (item: Item) => void;
+  removeFromCart: (index: number) => void;
+  clearCart: () => void;
   openCart: () => void;
   closeCart: () => void;
 };
 
-export const useCart = create<UseCart>((set) => ({
-  cartItems: [],
-  cartOpen: false,
-  openCart: () => set({cartOpen: true}),
-  closeCart: () => set({cartOpen: false}),
-  addToCart: (item) =>
-    set((state) => ({
-      cartItems: [...state.cartItems, item],
-    })),
-  removeFromCart: (index) =>
-    set((state) => ({
-      cartItems: state.cartItems.filter((_, i) => i !== index),
-    })),
-  clearCart: () => set({ cartItems: [] }),
-}));
+export const useCart = create<CartState>()(
+  persist(
+    (set) => ({
+      cartItems: [],
+      cartOpen: false,
+
+      addToCart: (item) =>
+        set((state) => ({ cartItems: [...state.cartItems, item] })),
+
+      removeFromCart: (index) =>
+        set((state) => ({
+          cartItems: state.cartItems.filter((_, i) => i !== index),
+        })),
+
+      clearCart: () => set({ cartItems: [] }),
+
+      openCart: () => set({ cartOpen: true }),
+      closeCart: () => set({ cartOpen: false }),
+    }),
+    {
+      name: "cart-storage", 
+    }
+  )
+);

@@ -25,7 +25,7 @@ const Cart = () => {
             <motion.div className={styles.cartModal} 
             initial={{x: 600, opacity: 0}}
             animate={{x: 0, opacity: 1}}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             >
                 <span className={styles.modalTitle}>your products</span>
                 {cartItems.length === 0 && 

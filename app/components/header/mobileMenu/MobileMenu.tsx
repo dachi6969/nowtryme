@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const menuList = [
     {title: "Home", icon: <House />},
     {title: "About", icon: <Info />},
-    {title: "Contact", icon: <Contact />},
+    {title: "Contacts", icon: <Contact />},
     {title: "Catalogue", icon: <BookImage />},
     {title: "AI-Chat", icon: <MessageCircle />},
 
@@ -29,6 +29,13 @@ const MobileMenu = () => {
         router.push("/AI-Chatbot");
         closeMobileM();
     }
+    const navContacts = () => {
+        const contacts = document.getElementById('contacts');
+        if(contacts) {
+            contacts.scrollIntoView({behavior: 'smooth'});
+            closeMobileM();
+        }
+    }
     return(
         <div className={styles.modal} onClick={closeMobileM}>
             <div className={styles.modalBox} onClick={(e:React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
@@ -49,6 +56,8 @@ const MobileMenu = () => {
                                     closeMobileM();
                                 }else if (item.title === "AI-Chat") {
                                     navChat();
+                                }else if (item.title === "Contacts") {
+                                    navContacts();
                                 }
                             }}
                             >

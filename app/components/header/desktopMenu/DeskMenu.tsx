@@ -9,6 +9,12 @@ const DeskMenu = () => {
     const {openAbout} = useModal();
     const {scrolled} = useColored();
     const scrolledClr = scrolled ? `${styles.nav} ${styles.navScrolled}` : styles.nav;
+    const scrollToContact = () => {
+        const contact = document.getElementById('contacts');
+        if (contact) {
+            contact.scrollIntoView({behavior: 'smooth'})
+        }
+    }
     return(
         <nav className={scrolledClr}>   
             <Cart />
@@ -21,9 +27,9 @@ const DeskMenu = () => {
             <span className={styles.navItem} onClick={openAbout}>
                 About
             </span>
-            <Link href="/" className={styles.navItem}>
+            <span className={styles.navItem} onClick={scrollToContact}>
                 Contact
-            </Link>
+            </span>
             <Link href="/" className={styles.navItem}>
                 Catalogue
             </Link>

@@ -94,7 +94,7 @@ const FirstContent = () => {
             alt="Furniture content" 
             fill 
             style={{objectFit: "cover"}} 
-            // priority      
+            priority      
             />
         )}
 

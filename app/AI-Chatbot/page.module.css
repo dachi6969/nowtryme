@@ -83,11 +83,12 @@
   display: inline-block;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #E6E6E6;
+  font-size: 18px;
 }
 
 .userMsg {
   text-align: right;
-  background-color: grey;
+  background-color: #202123;
   padding: 8px 12px;
   border-radius: 12px;
   margin: 6px 0;
@@ -96,11 +97,12 @@
 
 .assistantMsg {
   text-align: left;
-  background-color: #202123;
+  background-color: transparent;
   padding: 8px 12px;
   border-radius: 12px;
   margin: 6px 0;
   align-self: flex-start;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .pre {

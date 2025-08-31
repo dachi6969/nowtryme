@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     const SYSTEM_PROMPT: ChatMessage = {
       role: "system",
       content:
-        "You are a concise interior design assistant. Respond in no more than 3 short bullet points. Be helpful and brief.",
+        "You are a helpful interior design assistant focused on furniture. Give short, clear answers in plain text. Be concise and friendly.",
     };
 
     const body = JSON.stringify({

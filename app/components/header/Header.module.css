@@ -56,13 +56,14 @@
 .iconWrapper{
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .gitIcon{
     cursor: pointer;
     display: flex;
-    gap: 18px;
+    gap: 14px;  
+    padding-top: 4px;
 }
 
 

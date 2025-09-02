@@ -3,7 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import ProductCards from "./cards/Cards";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const categories = [
     'Armchair',
@@ -23,17 +23,24 @@ export default function Products () {
     }
     return(
         <div className={styles.main}>
-            <div className={styles.titleDiv}>
+            <AnimatePresence>
+            <motion.div className={styles.titleDiv}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2}}
+            >
                 {category} Collection
                 <span>
                     Discover new standards of comfort with our furniture.
                 </span>
-            </div>  
+            </motion.div>  
+            </AnimatePresence>
                 <motion.div 
                 className={styles.menuWrapper}
                 initial={{opacity: 0}}
                 animate={{opacity: 1}} 
-                transition={{duration: 0.3, ease: "easeIn"}}   
+                transition={{duration: 0.8, ease: "easeIn"}}   
                 >
                     {categories.map((item: string,index: number) => (
                         <div key={index} className={styles.menuItem} onClick={() => categoryRoute(item)}>

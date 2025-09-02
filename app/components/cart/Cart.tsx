@@ -18,7 +18,7 @@ const Cart = () => {
     return(
         <div>
             <div style={{position: "relative"}}>
-            <ShoppingCart size={27} onClick={openCart} style={{cursor: "pointer"}} className={styles.icon}/>
+            <ShoppingCart size={24} onClick={openCart} style={{cursor: "pointer"}} className={styles.icon}/>
             <div className={styles.counter}>{cartItems.length}</div>
             </div> 
             {cartOpen && 

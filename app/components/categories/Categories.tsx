@@ -4,22 +4,22 @@ import { useRouter } from "next/navigation";
 
 const items = [
     {
-        img: "/teste.png",
+        img: "/armchair8.jpg",
         alt: "armchair photo",
         title: "Armchair"
     },
     {
-        img: "/testerrr.png",
+        img: "/night table1.jpg",
         alt: "Night table photo",
         title: "Night table"
     },
     {
-        img: "/testerr.png",
+        img: "/lighting2.jpg",
         alt: "Lighting photo",
         title: "Lighting"
     },
     {
-        img: "/testerrrr.png",
+        img: "/bookshelf2.jpg",
         alt: "Bookshelf photo",
         title: "Bookshelf"
     },

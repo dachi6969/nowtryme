@@ -45,7 +45,7 @@ const Header = () => {
                     <Cart />
                     <Github 
                     aria-hidden={true}
-                    size={27}
+                    size={24}
                     onClick={gitRoute}
                     />
                 </div>

@@ -4,9 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    animation: imgEffect 0.8s ease-out;
     gap: 20px;
-    filter: brightness(80%);
 }
 
 .title{
@@ -48,18 +46,6 @@
     right: 7%;
 }
 
-
-
-@keyframes imgEffect {
-    from{
-        opacity: 0.6;
-        transform: scale(1.03);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
 @media (min-width: 480px) and (max-width: 900px) {
     .imaged{

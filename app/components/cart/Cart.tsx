@@ -15,6 +15,7 @@ type Item = {
 
 const Cart = () => {
     const {cartItems, clearCart, removeFromCart, cartOpen, openCart, closeCart} = useCart();
+    console.log(cartItems)
     return(
         <div>
             <div style={{position: "relative"}}>
@@ -34,7 +35,16 @@ const Cart = () => {
                 {cartItems.length !== 0 && 
                 cartItems.map((item: Item,index: number) => (
                     <div key={index} className={styles.eachProduct}>
-                        <Image src={item.img} alt={item.title} height={110} width={120} style={{borderRadius: "7px"}}/>
+                        <Image 
+                        src={item.img} 
+                        alt={item.title} 
+                        height={110} 
+                        width={120} 
+                        style={{
+                            borderRadius: "7px",
+                            objectFit: "cover"
+                        }}
+                        />
                         <span>{item.title}</span>
                         <span className={styles.price}>{item.price}$</span>
                         <Trash className={styles.remove} color="red" size={22} onClick={() => {removeFromCart(index)}}/>

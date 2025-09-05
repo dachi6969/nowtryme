@@ -34,11 +34,12 @@
     scrollbar-width: none;
     scroll-behavior: smooth;
     display: flex;
-    gap: 30px;
+    gap: 15px;
     justify-content: center;
 }
 .menuItem{
-    background-color: rgba(128, 128, 128, 0.253);
+    background-color: #212121eb;
+    color: #E6E6E6;
     padding: 10px 16px;
     border-radius: 10px;
     font-size: 18px;
